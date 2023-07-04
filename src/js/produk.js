@@ -75,12 +75,8 @@ fetch("./src/database/produk.json")
       judulLink.appendChild(judulElement);
 
       // Membuat elemen deskripsi
-      // const deskripsi = document.createElement("p");
-      // deskripsi.classList.add("deskripsi");
-      // deskripsi.innerText = item.deskripsi;
       const deskripsi = document.createElement("p");
       deskripsi.classList.add("deskripsi");
-<<<<<<< HEAD
 
       const temporaryElement = document.createElement("div");
       temporaryElement.innerHTML = item.deskripsi;
@@ -97,12 +93,6 @@ fetch("./src/database/produk.json")
 
       deskripsi.textContent = displayText;
 
-=======
-      const temporaryElement = document.createElement("div");
-      temporaryElement.innerHTML = item.deskripsi;
-      deskripsi.textContent = temporaryElement.textContent.trim();
-      
->>>>>>> 9c0f7bd0df491bc9d3c07145c8348dd6d3967729
       // Menambahkan semua elemen ke dalam kotakItem
       kotakItem.appendChild(img);
       kotakItem.appendChild(namaProject);
