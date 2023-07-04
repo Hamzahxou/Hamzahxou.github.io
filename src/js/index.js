@@ -168,7 +168,8 @@ form.addEventListener("submit", (e) => {
     informasi.textContent = "Pesan tidak boleh lebih dari 150 kata.";
   } else {
     function getRandomColor() {
-      const colors = ["#ffc107", "#dc3545", "#17a2b8", "#28a745"];
+      const colors = ["#ffc107", "#dc3545", "#17a2b8"];
+      // "#28a745" hanya owner
       const randomIndex = Math.floor(Math.random() * colors.length);
       return colors[randomIndex];
     }
