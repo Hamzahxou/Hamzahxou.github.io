@@ -336,6 +336,34 @@ section.Forum {
   height: auto;
 }
 
+section.Forum .alertNotifOwner {
+  margin-top: 40px;
+  margin-left: 10%;
+  margin-right: 10%;
+  position: fixed;
+  background-color: #fff3cd;
+  width: 80%;
+  padding: 0.5rem;
+  color: #866506;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  opacity: 0.9;
+}
+section.Forum .alertNotifOwner #tutupNotif {
+  background-color: var(--text-color);
+  color: var(--bg-light);
+  padding: 0 5px;
+  font-weight: 900;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+section.Forum .alertNotifOwner.display-none {
+  display: none;
+}
 section.Forum .areaForum {
   position: relative;
   width: 80%;
@@ -520,6 +548,7 @@ section.default {
 section.ProjectPage {
   height: auto;
 }
+
 section.ProjectPage .box h2 {
   color: var(--text-color);
   margin-bottom: 50px;
@@ -635,6 +664,12 @@ body.light footer p:first-child::after {
   }
   section.Forum .areaForum form.tempatPesan input.nama {
     width: 150px;
+  }
+
+  section.Forum .alertNotifOwner {
+    width: 400px;
+    margin-left: 5%;
+    margin-right: 0;
   }
 
   section.ProjectPage .areaProject {
