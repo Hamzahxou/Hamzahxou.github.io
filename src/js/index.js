@@ -276,6 +276,23 @@ document.addEventListener("mouseup", () => {
   document.removeEventListener("mousemove", move);
 });
 
+human.addEventListener("touchstart", (event) => {
+  const touch = event.touches[0];
+  offsetX = touch.clientX - human.offsetLeft;
+  offsetY = touch.clientY - human.offsetTop;
+});
+
+human.addEventListener("touchmove", (event) => {
+  event.preventDefault(); // Mencegah scroll halaman saat menggeser objek
+  const touch = event.touches[0];
+  human.style.left = touch.clientX - offsetX + "px";
+  human.style.top = touch.clientY - offsetY + "px";
+});
+
+human.addEventListener("touchend", () => {
+  // Tindakan setelah sentuhan selesai
+});
+
 const imgElement = document.querySelector("img.human");
 
 imgElement.addEventListener("click", (event) => {
@@ -310,15 +327,38 @@ function createKucing() {
     kucing.style.top = `${e.clientY}px`;
   };
 
-  kucing.addEventListener("mousedown", () => {
-    kucing.classList.remove("trans");
-    document.addEventListener("mousemove", move);
-  });
+  if (window.innerWidth >= 576) {
+    kucing.addEventListener("mousedown", () => {
+      kucing.classList.remove("trans");
+      document.addEventListener("mousemove", move);
+    });
 
-  document.addEventListener("mouseup", () => {
-    kucing.style.bottom = "100%";
-    document.removeEventListener("mousemove", move);
-  });
+    document.addEventListener("mouseup", () => {
+      kucing.style.bottom = "100%";
+      document.removeEventListener("mousemove", move);
+    });
+  }
+  if (window.innerWidth <= 576) {
+    let initialTouchY = 0;
+
+    kucing.addEventListener("touchstart", (event) => {
+      event.preventDefault(); // Mencegah scroll halaman saat menyentuh objek
+      kucing.classList.remove("bott");
+      const touch = event.touches[0];
+      initialTouchY = touch.clientY;
+    });
+
+    kucing.addEventListener("touchmove", (event) => {
+      event.preventDefault(); // Mencegah scroll halaman saat menggeser objek
+      const touch = event.touches[0];
+      const deltaY = touch.clientY - initialTouchY;
+      kucing.style.bottom = `calc(100% - ${deltaY}px)`;
+    });
+
+    kucing.addEventListener("touchend", () => {
+      // Tindakan setelah sentuhan selesai
+    });
+  }
 
   document.body.appendChild(kucing);
 
