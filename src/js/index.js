@@ -148,14 +148,15 @@ const namaForm = document.getElementById("nama");
 const namaLocal = localStorage.getItem("nama");
 if (namaForm) {
   namaForm.value = localStorage.getItem("nama");
+  namaForm.setAttribute("disabled", "");
 } else {
   namaForm.value = "";
 }
 
 if (!namaLocal) {
-  namaForm.removeAttribute("disabled");
+ namaForm.removeAttribute("disabled");
 } else {
-  namaForm.setAttribute("disabled", "");
+  
 }
 
 const informasi = document.querySelector(".informasi");
