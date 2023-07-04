@@ -107,12 +107,24 @@ function getNamaHari(tanggal) {
   const hari = date.getDay();
   return daftarNamaHari[hari];
 }
-
 const tanggalSekarang = new Date();
 const namaHariSekarang = getNamaHari(tanggalSekarang);
+//waktu
+var h = new Date().getHours();
+let waktu;
+if (h >= 4 && h < 10) {
+  waktu = "pagi yang cerah dan penuh semangat 🌞";
+} else if (h >= 10 && h < 15) {
+  waktu = "siang yang panas dan energik 🌤️";
+} else if (h >= 15 && h < 18) {
+  waktu = "sore yang hangat dan menyegarkan 🌅";
+} else if (h >= 18 || h < 4) {
+  waktu = "malam yang tenang dan damai 🌙";
+}
+
 const hari = document.getElementById("hari");
 
-hari.textContent = "hari " + namaHariSekarang + " yang cerah";
+hari.textContent = namaHariSekarang + " " + waktu;
 
 //simpan data ke google sheet
 

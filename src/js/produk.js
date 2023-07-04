@@ -48,15 +48,15 @@ fetch("./src/database/produk.json")
       }
       imgLink.appendChild(imgElement);
 
-      // Membuat elemen <a> untuk label
-      const labelLink = document.createElement("a");
-      labelLink.href = `./ProjectPage.html?judul=${encodeURIComponent(
-        item.judul
-      )}`;
-      labelLink.classList.add("label");
-      labelLink.innerText = "Free";
-      labelLink.style = `--color: ${randomClr}`;
-      img.appendChild(labelLink);
+      // // Membuat elemen <a> untuk label
+      // const labelLink = document.createElement("a");
+      // labelLink.href = `./ProjectPage.html?judul=${encodeURIComponent(
+      //   item.judul
+      // )}`;
+      // labelLink.classList.add("label");
+      // labelLink.innerText = "Free";
+      // labelLink.style = `--color: ${randomClr}`;
+      // img.appendChild(labelLink);
 
       // Membuat elemen namaProject
       const namaProject = document.createElement("div");
@@ -77,7 +77,21 @@ fetch("./src/database/produk.json")
       // Membuat elemen deskripsi
       const deskripsi = document.createElement("p");
       deskripsi.classList.add("deskripsi");
-      deskripsi.innerText = item.deskripsi;
+
+      const temporaryElement = document.createElement("div");
+      temporaryElement.innerHTML = item.deskripsi;
+
+      // Mengambil teks konten dari elemen sementara
+      const trimmedText = temporaryElement.textContent.trim();
+
+      // Memotong teks konten menjadi maksimal 20 karakter
+      const limitedText = trimmedText.substring(0, 100);
+
+      // Menambahkan tanda "..." jika teks terpotong
+      const displayText =
+        trimmedText.length > 100 ? limitedText + "..." : limitedText;
+
+      deskripsi.textContent = displayText;
 
       // Menambahkan semua elemen ke dalam kotakItem
       kotakItem.appendChild(img);
