@@ -148,7 +148,7 @@ const namaForm = document.getElementById("nama");
 const namaLocal = localStorage.getItem("nama");
 if (namaForm) {
   namaForm.value = localStorage.getItem("nama");
-  namaForm.setAttribute("disabled", "");
+  //namaForm.setAttribute("disabled", "");
 } else {
   namaForm.value = "";
 }
