@@ -357,9 +357,13 @@ section.Forum .areaForum .areaPesanMasuk .pesanMasuk {
 }
 
 section.Forum .areaForum .areaPesanMasuk .pesanMasuk .nama {
+  display: inline-block;
   position: relative;
   font-weight: 700;
+  padding-right: 5px;
   color: var(--color);
+  border-bottom: 3px solid;
+  border-right: 4px solid;
 }
 
 section.Forum .areaForum .areaPesanMasuk .pesanMasuk .nama::before {
@@ -367,20 +371,21 @@ section.Forum .areaForum .areaPesanMasuk .pesanMasuk .nama::before {
   position: absolute;
   width: 15px;
   height: 17px;
-  border-left: 1px solid var(--color);
+  border-left: 2px solid var(--color);
   border-bottom: 1px solid var(--color);
-  top: 20px;
-  left: 5px;
+  top: 25px;
+  left: 0;
 }
 
 section.Forum .areaForum .areaPesanMasuk .pesanMasuk .nama::after {
   content: ">";
   position: absolute;
-  top: 25px;
+  top: 30px;
   left: 20px;
 }
 
 section.Forum .areaForum .areaPesanMasuk .pesanMasuk .pesan {
+  margin-top: 5px;
   margin-left: 35px;
   overflow-y: scroll;
 }
