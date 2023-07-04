@@ -35,6 +35,9 @@ body {
 }
 
 body {
+  background-image: url("./src/img/Hamzahxou.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: var(--bg-light);
   width: 100vw;
   overflow-x: hidden;
