@@ -157,9 +157,9 @@ form.addEventListener("submit", (e) => {
   if (namaForm.value == "") {
     inf();
     informasi.textContent = "namanya gada";
-  } else if (namaForm.value.length > 25) {
+  } else if (namaForm.value.length > 15) {
     inf();
-    informasi.textContent = "nama tidak boleh lebih dari 25 kata.";
+    informasi.textContent = "nama tidak boleh lebih dari 15 kata.";
   } else if (pesanForm.value == "") {
     inf();
     informasi.textContent = "mau ngirim apa coba";
