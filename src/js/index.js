@@ -126,6 +126,15 @@ const hari = document.getElementById("hari");
 
 hari.textContent = namaHariSekarang + " " + waktu;
 
+const tutupNotif = document.getElementById("tutupNotif");
+if (localStorage.getItem("mengerti") == "y") {
+  tutupNotif.parentElement.classList.add("display-none");
+} else {
+  tutupNotif.addEventListener("click", () => {
+    tutupNotif.parentNode.classList.add("display-none");
+    localStorage.setItem("mengerti", "y");
+  });
+}
 //simpan data ke google sheet
 
 const scriptURL =
@@ -143,6 +152,12 @@ if (namaForm) {
   namaForm.value = "";
 }
 
+if (!namaLocal) {
+  namaForm.removeAttribute("disabled");
+} else {
+  namaForm.setAttribute("disabled", "");
+}
+
 const informasi = document.querySelector(".informasi");
 
 function inf() {
@@ -157,9 +172,9 @@ form.addEventListener("submit", (e) => {
   if (namaForm.value == "") {
     inf();
     informasi.textContent = "namanya gada";
-  } else if (namaForm.value.length > 15) {
+  } else if (namaForm.value.length > 25) {
     inf();
-    informasi.textContent = "nama tidak boleh lebih dari 15 kata.";
+    informasi.textContent = "nama tidak boleh lebih dari 25 kata.";
   } else if (pesanForm.value == "") {
     inf();
     informasi.textContent = "mau ngirim apa coba";
@@ -168,8 +183,7 @@ form.addEventListener("submit", (e) => {
     informasi.textContent = "Pesan tidak boleh lebih dari 150 kata.";
   } else {
     function getRandomColor() {
-      const colors = ["#ffc107", "#dc3545", "#17a2b8"];
-      // "#28a745" hanya owner
+      const colors = ["#ffc107", "#dc3545", "#17a2b8", "#28a745"];
       const randomIndex = Math.floor(Math.random() * colors.length);
       return colors[randomIndex];
     }
