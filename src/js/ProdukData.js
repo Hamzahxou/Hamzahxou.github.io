@@ -84,7 +84,7 @@ fetch("./src/database/produk.json")
       // const parsedesk = result.deskripsi.trim();
       // const metadeskripsi = parsedesk.substring(0, 100);
       const metaimg = `https:hamzahxou.github.io/src/img/Produk/${result.urlGambar}_light.png`;
-      const metaurl = `https:hamzahxou.github.io/ProjectPage.html?judul=`;
+      const metaurl = `https:hamzahxou.github.io/ProjectPage.html?judul=${metatitle}`;
 
       // Mengubah nilai meta
       document
