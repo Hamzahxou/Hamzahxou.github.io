@@ -59,6 +59,49 @@ fetch("./src/database/produk.json")
 
       boxs.appendChild(h2);
       boxs.appendChild(areaProject);
+
+      // Mendapatkan data dari JSON
+      const metatitle = result.judul;
+      //
+      // Membuat elemen deskripsi
+      const cekdeskripsi = document.createElement("p");
+      cekdeskripsi.classList.add("deskripsi");
+
+      const cektemporaryElement = document.createElement("div");
+      cektemporaryElement.innerHTML = result.deskripsi;
+
+      // Mengambil teks konten dari elemen sementara
+      const cektrimmedText = cektemporaryElement.textContent.trim();
+
+      // Memotong teks konten menjadi maksimal 20 karakter
+      const ceklimitedText = cektrimmedText.substring(0, 100);
+
+      // Menambahkan tanda "..." jika teks terpotong
+      const cekdisplayText =
+        cektrimmedText.length > 100 ? ceklimitedText + "..." : ceklimitedText;
+
+      const metadeskripsi = cekdisplayText;
+      // const parsedesk = result.deskripsi.trim();
+      // const metadeskripsi = parsedesk.substring(0, 100);
+      const metaimg = `https:hamzahxou.github.io/src/img/Produk/${result.urlGambar}_light.png`;
+      const metaurl = `https:hamzahxou.github.io/ProjectPage.html?judul=`;
+
+      // Mengubah nilai meta
+      document
+        .querySelector('meta[name="description"]')
+        .setAttribute("content", metadeskripsi);
+      document
+        .querySelector('meta[property="og:title"]')
+        .setAttribute("content", metatitle);
+      document
+        .querySelector('meta[property="og:description"]')
+        .setAttribute("content", metadeskripsi);
+      document
+        .querySelector('meta[property="og:image"]')
+        .setAttribute("content", metaimg);
+      document
+        .querySelector('meta[property="og:url"]')
+        .setAttribute("content", metaurl);
     } else {
     }
   })
