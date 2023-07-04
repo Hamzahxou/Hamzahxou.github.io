@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamzahxou</title>
+    <link rel="stylesheet" href="./src/style/global.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1>
+          <a href="#">&lt; <span>Hamzahxou</span> /&gt;</a>
+        </h1>
+      </div>
+      <div class="title">
+        <p>WEB Portofolio</p>
+      </div>
+      <ul>
+        <li class="active"><a href="#Home" id="MenuHome">Home</a></li>
+        <li><a class="top" href="#Project" id="MenuProject">Project</a></li>
+        <li><a href="#Forum" id="MenuForum">Forum</a></li>
+      </ul>
+
+      <div class="lightArea">
+        <div class="lightbtn" id="lightMode">
+          <div class="kondisi"></div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="Home" class="Home">
+        <!-- <div class="areaHuman"> -->
+        <img
+          class="human"
+          src="src/img/pixelHuman.png"
+          width="150"
+          alt="human"
+        />
+        <!-- </div> -->
+        <div class="textHero">
+          <h2>Website<span>Portofolio</span></h2>
+          <p id="hari"></p>
+        </div>
+      </section>
+
+      <section id="Project" class="Project default">
+        <div class="box">
+          <h2>Project</h2>
+          <div class="areaProject"></div>
+        </div>
+      </section>
+
+      <section id="Forum" class="Forum default">
+        <div class="box">
+          <h2>forum</h2>
+          <div class="areaForum">
+            <div class="areaPesanMasuk"></div>
+            <div class="inputBox">
+              <form method="post" class="tempatPesan" name="Forum">
+                <input type="hidden" id="color" name="color" />
+                <div class="boxinfo">
+                  <input
+                    placeholder="username"
+                    class="nama"
+                    type="text"
+                    id="nama"
+                    name="nama"
+                    maxlength="30"
+                  />
+                  <div class="alertNotif d-none">
+                    <div class="informasi"></div>
+                  </div>
+                </div>
+                <div class="boxPesan">
+                  <textarea
+                    placeholder="ketik pesan"
+                    class="pesan"
+                    name="pesan"
+                    id="pesan"
+                    maxlength="155"
+                  ></textarea>
+                  <button class="btnSubmit active" type="submit">🚀</button>
+                  <button
+                    class="d-none btnSubmit disable"
+                    type="submit"
+                    disabled
+                  >
+                    <span class="loader"></span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>copyright &copy; 2023 -</p>
+      <p>All Right Reserved</p>
+    </footer>
+    <script src="./src/js/index.js"></script>
+    <script src="./src/js/produk.js"></script>
+  </body>
+</html>

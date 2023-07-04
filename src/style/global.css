@@ -1,0 +1,639 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --bg-dark: #343a40;
+  --bg-light: #dee8f0;
+  --bg-success: #28a745;
+  --bg-danger: #dc3545;
+  --bg-warning: #ffc107;
+  --bg-info: #17a2b8;
+
+  --text-color: #aaacc9;
+  --text-white: #f2f2f2;
+  --text-paragraf: #9cbfdd;
+  --text-paragraf-transparent: rgba(156, 191, 221, 0.5);
+  --text-hitam: #1e2022;
+  /* --text-paragraf: #7c8184; */
+  /* --text-paragraf: #8496a9; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--bg-light);
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  z-index: 999;
+}
+
+header .logo a {
+  user-select: none;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+header .title {
+  color: var(--text-white);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  user-select: none;
+}
+header ul li a.top {
+  font-weight: 900;
+  font-size: 1rem;
+  color: var(--bg-warning);
+}
+
+header ul {
+  list-style-type: none;
+  display: flex;
+  gap: 2rem;
+}
+
+header ul li {
+  position: relative;
+}
+
+header ul li::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-40%);
+  width: 10px;
+  height: 10px;
+  background-color: var(--bg-dark);
+  border: 1px solid var(--text-color);
+  border-radius: 2px;
+}
+
+header ul li:hover::before,
+header ul li.active::before {
+  background-color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+header ul li a {
+  user-select: none;
+  color: var(--text-white);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* lightmode */
+header .lightArea {
+  right: 5%;
+  top: 40px;
+  user-select: none;
+  transition: 0.5s;
+}
+
+header .lightArea .lightbtn {
+  position: relative;
+  border: 2px solid var(--bg-light);
+  width: 20px;
+  height: 50px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+header .lightArea .lightbtn .kondisi {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: var(--bg-light);
+  border-radius: 50%;
+  transform: translateY(1px);
+  transition: all 0.5s;
+}
+
+header .lightArea .lightbtn.active .kondisi {
+  transform: translateY(30.5px);
+}
+
+/* kondisi light */
+
+body.light header .logo a span {
+  color: var(--bg-danger);
+}
+
+/* bg */
+body.light,
+body.light section.light {
+  background: var(--bg-light);
+}
+/* text */
+body.light header .logo a,
+body.light header .title,
+body.light header ul li a,
+body.light section.Project .areaProject .kotakItem .deskripsi,
+body.light section.light h2,
+body.light section.light p,
+body.light section.ProjectPage .box h2,
+body.light section.ProjectPage .areaProject .deskripsi {
+  color: var(--bg-dark);
+}
+
+body.light section.light .areaForum form.tempatPesan textarea.pesan {
+  background-color: transparent;
+  color: var(--text-hitam);
+}
+/* border */
+body.light header .lightArea .lightbtn,
+body.light header ul li::before {
+  border-color: var(--text-color);
+  background: transparent;
+}
+body.light section.light .areaForum form.tempatPesan textarea {
+  background-color: transparent;
+  color: var(--text-color);
+}
+/* border aktiv */
+body.light header ul li:hover::before,
+body.light header ul li.active::before {
+  background-color: var(--text-color);
+}
+
+/* div */
+body.light header .lightArea .lightbtn .kondisi {
+  background: var(--bg-dark);
+}
+
+/*main*/
+section {
+  min-height: 100vh;
+  /* padding: 30% 10px; */
+  background-color: var(--bg-dark);
+}
+
+section.Home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section.Home img {
+  margin-top: 50px;
+}
+
+.areaHuman {
+  border: 2px solid;
+  padding: -1rem 1rem 1rem;
+  position: relative;
+  z-index: 99999;
+  user-select: none;
+}
+.human {
+  z-index: 99999;
+  user-select: none;
+}
+.textHero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+section.Home h2 {
+  padding: 0 10px;
+  text-align: center;
+  color: var(--text-white);
+}
+
+body.light section.Home h2 span {
+  color: var(--bg-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--bg-warning);
+  text-decoration-thickness: 5px;
+}
+section.Home h2 span {
+  color: var(--bg-warning);
+}
+
+section.Home p {
+  color: var(--text-paragraf);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+
+section.Project {
+  height: auto;
+}
+section .box {
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section.Project .areaProject {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+section.Project .areaProject .kotakItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid var(--text-color);
+  padding: 1rem;
+  border-radius: 20px;
+  width: 230px;
+}
+
+section.Project .areaProject .kotakItem img {
+  border-radius: 10px;
+  border: 2px solid var(--text-color);
+  width: 100%;
+}
+
+section.Project .areaProject .kotakItem .img {
+  position: relative;
+  overflow: hidden;
+}
+
+section.Project .areaProject .kotakItem .img .label {
+  color: var(--text-white);
+  background-color: var(--color);
+  position: absolute;
+  right: 0;
+  padding: 0.2rem 1rem;
+  border-radius: 0 10px 0 20px;
+  text-decoration: none;
+  font-weight: 600;
+  border-left: 2px solid var(--text-color);
+  border-bottom: 2px solid var(--text-color);
+  border-top: 2px solid var(--text-color);
+  border-right: 2px solid var(--text-color);
+  z-index: 9;
+}
+
+section.Project .areaProject .kotakItem .namaProject a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+section.Project .areaProject .kotakItem .deskripsi {
+  color: var(--text-paragraf-transparent);
+  font-size: 10px;
+  text-align: center;
+}
+
+section.Project h2,
+section.Forum h2 {
+  color: var(--text-white);
+  margin-bottom: 20px;
+}
+
+section.Forum {
+  height: auto;
+}
+
+section.Forum .areaForum {
+  position: relative;
+  width: 80%;
+}
+
+section.Forum .areaForum .areaPesanMasuk {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+section.Forum .areaForum .areaPesanMasuk .pesanMasuk {
+  width: 100%;
+  background-color: var(--text-hitam);
+  color: var(--text-color);
+  padding: 0.5rem;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  overflow-y: scroll;
+}
+
+section.Forum .areaForum .areaPesanMasuk .pesanMasuk .nama {
+  position: relative;
+  font-weight: 700;
+  color: var(--color);
+}
+
+section.Forum .areaForum .areaPesanMasuk .pesanMasuk .nama::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 17px;
+  border-left: 1px solid var(--color);
+  border-bottom: 1px solid var(--color);
+  top: 20px;
+  left: 5px;
+}
+
+section.Forum .areaForum .areaPesanMasuk .pesanMasuk .nama::after {
+  content: ">";
+  position: absolute;
+  top: 25px;
+  left: 20px;
+}
+
+section.Forum .areaForum .areaPesanMasuk .pesanMasuk .pesan {
+  margin-left: 35px;
+  overflow-y: scroll;
+}
+
+section.Forum .areaForum .inputBox {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(5px);
+}
+section.Forum .areaForum form.tempatPesan {
+  padding: 0.5rem;
+  width: 90%;
+  margin-bottom: 20px;
+}
+section.Forum .boxinfo {
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+section.Forum .areaForum form.tempatPesan input.nama {
+  width: 40%;
+  background-color: transparent;
+  border: 2px solid var(--text-color);
+  border-radius: 5px;
+  outline: none;
+  color: var(--text-color);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 0.1rem 0.5rem;
+  margin-bottom: 5px;
+}
+
+section.Forum .alertNotif.d-none {
+  display: none;
+}
+section.Forum .alertNotif {
+  border-radius: 5px;
+  background-color: #fff3cd;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  margin-bottom: 5px;
+}
+section.Forum .alertNotif .informasi {
+  text-align: center;
+  font-size: 10px;
+  color: #866506;
+  font-weight: 600;
+}
+
+section.Forum .areaForum form.tempatPesan div.boxPesan {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background-color: var(--bg-light);
+  border-radius: 20px;
+  overflow: hidden;
+}
+section.Forum .areaForum form.tempatPesan textarea.pesan {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 0 0.5rem 1rem;
+  padding-right: 45px;
+  font-weight: 600;
+  color: var(--bg-dark);
+  letter-spacing: 0.2px;
+  border: 2px solid var(--text-color);
+  outline: none;
+  border-radius: 20px 0 0 20px;
+  background-color: transparent;
+}
+section.Forum .areaForum form.tempatPesan button.btnSubmit {
+  width: 45px;
+  position: absolute;
+  right: 0;
+  border-radius: 0 20px 20px 0;
+  height: 100%;
+  padding: 0 0.5rem;
+  background-color: var(--bg-success);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 9;
+}
+
+html body section.Forum .areaForum form.tempatPesan button.d-none {
+  display: none;
+}
+
+section.Forum .areaForum form.tempatPesan button.disable {
+  height: 50px;
+  width: 50px;
+  background-color: var(--bg-danger);
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50px) translateX(3px);
+}
+
+.loader {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+section.default {
+  display: none;
+}
+
+/* Projectpage */
+
+section.ProjectPage {
+  height: auto;
+}
+section.ProjectPage .box h2 {
+  color: var(--text-color);
+  margin-bottom: 50px;
+}
+
+section.ProjectPage .areaProject {
+  position: relative;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+section.ProjectPage .areaProject img {
+  position: relative;
+  border-radius: 10px;
+  width: 300px;
+  display: block;
+}
+
+section.ProjectPage .areaProject .deskripsi {
+  text-align: center;
+  color: var(--text-white);
+  font-weight: 500;
+  width: 250px;
+}
+
+a.btn {
+  display: inline-block;
+  border: 2px solid var(--bg-danger);
+  background-color: var(--bg-danger);
+  color: #aaacc9;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  margin: 0 10px;
+  margin-top: 20px;
+}
+
+a.btn.demo {
+  background-color: transparent;
+  border-color: var(--bg-success);
+}
+a.btn.demo:hover {
+  background-color: transparent;
+  border-color: var(--bg-danger);
+}
+a.btn:hover {
+  background-color: var(--bg-success);
+  border-color: var(--bg-success);
+}
+
+/* footer */
+
+body.light footer {
+  background-color: rgba(52, 58, 64, 0.2);
+  color: var(--bg-dark);
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: rgba(52, 58, 64, 0.9);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer p {
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+footer p:first-child::after {
+  content: " hamzahxou";
+  font-weight: 800;
+  color: var(--text-white);
+  text-decoration: underline;
+}
+body.light footer p:first-child::after {
+  color: var(--bg-danger);
+}
+
+.kucing {
+  position: fixed;
+  width: 50px;
+  z-index: 999999;
+  user-select: none;
+  bottom: 0;
+  cursor: move;
+}
+
+.kucing.trans {
+  transition: 9s;
+}
+.kucing.bott {
+  bottom: 100%;
+}
+/* breakpoint */
+@media (min-width: 768px) {
+  section.Forum .areaForum {
+    width: 700px;
+  }
+  section.Forum .areaForum form.tempatPesan {
+    width: 50%;
+  }
+  section.Forum .areaForum form.tempatPesan input.nama {
+    width: 150px;
+  }
+
+  section.ProjectPage .areaProject {
+    width: 700px;
+  }
+  section.ProjectPage .areaProject .deskripsi {
+    width: 500px;
+  }
+}
