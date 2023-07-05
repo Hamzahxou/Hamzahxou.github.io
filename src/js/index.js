@@ -182,7 +182,7 @@ function _0x42ef() {
     "https://docs.google.com/spreadsheets/d/",
     "59344gSshIQ",
     "\x22,\x22",
-    "1ZTCERAwio2qTbOKnyNpuZAYdcOZIuYpizSUDjswkJG0",
+    "1Og-ASK8zhvzfSqsqhB2OqGRkdWAhvqE_pKP7LIbnS0I",
     "div",
     ".informasi",
     "<span\x20style=\x27text-decoration:\x20line-through;\x27>users</span>",
@@ -230,7 +230,7 @@ function _0x42ef() {
   }
 })(_0x42ef, 0xabc2c);
 const scriptURL =
-    "https://script.google.com/macros/s/AKfycbzZciEdywHsr62lneaD_35hh7doKpe0GrvJGjf_4ntU3jh_3Xx2KvePlZJ1CDhoKNWp/exec",
+    "https://script.google.com/macros/s/AKfycbw9CGkhSsegaFfjMqMu1RDjt5TXXhXK7iEPJhsnxnv_ojpKncG43wiO2-CuzIjtu_Hd/exec",
   form = document[_0x201438(0x9f)][_0x201438(0xa6)],
   btnActive = document[_0x201438(0x83)](_0x201438(0x95)),
   btnDisable = document[_0x201438(0x83)]("button.disable"),
