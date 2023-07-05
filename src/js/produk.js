@@ -1,108 +1,150 @@
-const areaProject = document.querySelector(".areaProject");
-
-// document.addEventListener("DOMContentLoaded", instantiate);
+const _0x34848b = _0x3a6e;
+(function (_0x4ce602, _0x422862) {
+  const _0x2c180e = _0x3a6e,
+    _0xd6dfe2 = _0x4ce602();
+  while (!![]) {
+    try {
+      const _0x311d0d =
+        (-parseInt(_0x2c180e(0x85)) / 0x1) * (parseInt(_0x2c180e(0x99)) / 0x2) +
+        parseInt(_0x2c180e(0x88)) / 0x3 +
+        (-parseInt(_0x2c180e(0x83)) / 0x4) *
+          (-parseInt(_0x2c180e(0x8e)) / 0x5) +
+        parseInt(_0x2c180e(0xaa)) / 0x6 +
+        parseInt(_0x2c180e(0xa3)) / 0x7 +
+        (parseInt(_0x2c180e(0x8c)) / 0x8) * (parseInt(_0x2c180e(0xa4)) / 0x9) +
+        (-parseInt(_0x2c180e(0x80)) / 0xa) * (parseInt(_0x2c180e(0xab)) / 0xb);
+      if (_0x311d0d === _0x422862) break;
+      else _0xd6dfe2["push"](_0xd6dfe2["shift"]());
+    } catch (_0x431358) {
+      _0xd6dfe2["push"](_0xd6dfe2["shift"]());
+    }
+  }
+})(_0x1881, 0xd4c03);
+const areaProject = document[_0x34848b(0x91)](_0x34848b(0x8f));
 function RandomColor() {
-  const colors = ["#ffc107", "#dc3545", "#17a2b8", "#28a745"];
-  const randomIndex = Math.floor(Math.random() * colors.length);
-  return colors[randomIndex];
+  const _0x395a30 = _0x34848b,
+    _0x2c168b = ["#ffc107", _0x395a30(0xa9), "#17a2b8", _0x395a30(0x7f)],
+    _0x4e1cd5 = Math[_0x395a30(0x89)](
+      Math[_0x395a30(0x9b)]() * _0x2c168b[_0x395a30(0xa1)]
+    );
+  return _0x2c168b[_0x4e1cd5];
 }
-
 let randomClr = RandomColor();
-// function instantiate() {
-//   dataJsonProduk();
-//   setInterval(dataJsonProduk, 500); // Refresh setiap 5 detik (5000 milidetik)
-// }
-
-// function dataJsonProduk() {
-
-// Fetch data dari file JSON
-fetch("./src/database/produk.json")
-  .then((response) => response.json())
-  .then((data) => {
-    // Kosongkan kontainer sebelum menambahkan elemen baru
-    areaProject.innerHTML = "";
-
-    // Membuat elemen HTML dari data JSON
-    data.forEach((item) => {
-      // Membuat elemen kotakItem
-      const kotakItem = document.createElement("div");
-      kotakItem.classList.add("kotakItem");
-
-      // Membuat elemen img
-      const img = document.createElement("div");
-      img.classList.add("img");
-
-      // Membuat elemen <a> untuk gambar
-      const imgLink = document.createElement("a");
-      imgLink.href = `./ProjectPage.html?judul=${encodeURIComponent(
-        item.judul
-      )}`;
-      img.appendChild(imgLink);
-
-      // Membuat elemen <img>
-      const imgElement = document.createElement("img");
-      if (localStorage.getItem("mode")) {
-        imgElement.src = `./src/img/Produk/${item.urlGambar}_light.png`;
-      } else {
-        imgElement.src = `./src/img/Produk/${item.urlGambar}_dark.png`;
-      }
-      imgLink.appendChild(imgElement);
-
-      // // Membuat elemen <a> untuk label
-      // const labelLink = document.createElement("a");
-      // labelLink.href = `./ProjectPage.html?judul=${encodeURIComponent(
-      //   item.judul
-      // )}`;
-      // labelLink.classList.add("label");
-      // labelLink.innerText = "Free";
-      // labelLink.style = `--color: ${randomClr}`;
-      // img.appendChild(labelLink);
-
-      // Membuat elemen namaProject
-      const namaProject = document.createElement("div");
-      namaProject.classList.add("namaProject");
-
-      // Membuat elemen <a> untuk judul
-      const judulLink = document.createElement("a");
-      judulLink.href = `./ProjectPage.html?judul=${encodeURIComponent(
-        item.judul
-      )}`;
-      namaProject.appendChild(judulLink);
-
-      // Membuat elemen <p> untuk judul
-      const judulElement = document.createElement("p");
-      judulElement.innerText = item.judul;
-      judulLink.appendChild(judulElement);
-
-      // Membuat elemen deskripsi
-      const deskripsi = document.createElement("p");
-      deskripsi.classList.add("deskripsi");
-
-      const temporaryElement = document.createElement("div");
-      temporaryElement.innerHTML = item.deskripsi;
-
-      // Mengambil teks konten dari elemen sementara
-      const trimmedText = temporaryElement.textContent.trim();
-
-      // Memotong teks konten menjadi maksimal 20 karakter
-      const limitedText = trimmedText.substring(0, 100);
-
-      // Menambahkan tanda "..." jika teks terpotong
-      const displayText =
-        trimmedText.length > 100 ? limitedText + "..." : limitedText;
-
-      deskripsi.textContent = displayText;
-
-      // Menambahkan semua elemen ke dalam kotakItem
-      kotakItem.appendChild(img);
-      kotakItem.appendChild(namaProject);
-      kotakItem.appendChild(deskripsi);
-
-      // Menambahkan kotakItem ke dalam kontainer
-      areaProject.appendChild(kotakItem);
-    });
+function _0x1881() {
+  const _0x165ade = [
+    "div",
+    "random",
+    "innerText",
+    "src",
+    "createElement",
+    "textContent",
+    "href",
+    "length",
+    "classList",
+    "11470963wJfjZq",
+    "252279SbTiXB",
+    "error",
+    "./src/database/produk.json",
+    "...",
+    "deskripsi",
+    "#dc3545",
+    "2291268iPsYcW",
+    "33Goxdnl",
+    "img",
+    "#28a745",
+    "9762130LkJyfS",
+    "judul",
+    "appendChild",
+    "3788iAtbZJ",
+    "innerHTML",
+    "108nKQGQd",
+    "namaProject",
+    "./ProjectPage.html?judul=",
+    "1608753yCBBfu",
+    "floor",
+    "mode",
+    "forEach",
+    "296pWfmGk",
+    "_dark.png",
+    "4835HQjAzA",
+    ".areaProject",
+    "Error:",
+    "querySelector",
+    "kotakItem",
+    "catch",
+    "json",
+    "./src/img/Produk/",
+    "add",
+    "urlGambar",
+    "_light.png",
+    "13142Qzoaxw",
+  ];
+  _0x1881 = function () {
+    return _0x165ade;
+  };
+  return _0x1881();
+}
+function _0x3a6e(_0x299fb7, _0x1c86cc) {
+  const _0x1881e9 = _0x1881();
+  return (
+    (_0x3a6e = function (_0x3a6e76, _0x30e787) {
+      _0x3a6e76 = _0x3a6e76 - 0x7e;
+      let _0xfaa7c9 = _0x1881e9[_0x3a6e76];
+      return _0xfaa7c9;
+    }),
+    _0x3a6e(_0x299fb7, _0x1c86cc)
+  );
+}
+fetch(_0x34848b(0xa6))
+  ["then"]((_0x42bb5a) => _0x42bb5a[_0x34848b(0x94)]())
+  ["then"]((_0x2abf3) => {
+    const _0x370df5 = _0x34848b;
+    (areaProject[_0x370df5(0x84)] = ""),
+      _0x2abf3[_0x370df5(0x8b)]((_0x4036f3) => {
+        const _0x256f80 = _0x370df5,
+          _0x467d7a = document[_0x256f80(0x9e)]("div");
+        _0x467d7a[_0x256f80(0xa2)]["add"](_0x256f80(0x92));
+        const _0x2bdca1 = document[_0x256f80(0x9e)](_0x256f80(0x9a));
+        _0x2bdca1[_0x256f80(0xa2)][_0x256f80(0x96)](_0x256f80(0x7e));
+        const _0x2d91d6 = document[_0x256f80(0x9e)]("a");
+        (_0x2d91d6[_0x256f80(0xa0)] =
+          _0x256f80(0x87) + encodeURIComponent(_0x4036f3["judul"])),
+          _0x2bdca1[_0x256f80(0x82)](_0x2d91d6);
+        const _0x5bf6c1 = document[_0x256f80(0x9e)](_0x256f80(0x7e));
+        localStorage["getItem"](_0x256f80(0x8a))
+          ? (_0x5bf6c1[_0x256f80(0x9d)] =
+              "./src/img/Produk/" + _0x4036f3["urlGambar"] + _0x256f80(0x98))
+          : (_0x5bf6c1["src"] =
+              _0x256f80(0x95) + _0x4036f3[_0x256f80(0x97)] + _0x256f80(0x8d));
+        _0x2d91d6[_0x256f80(0x82)](_0x5bf6c1);
+        const _0x38cea1 = document[_0x256f80(0x9e)]("div");
+        _0x38cea1[_0x256f80(0xa2)][_0x256f80(0x96)](_0x256f80(0x86));
+        const _0x50a6a5 = document[_0x256f80(0x9e)]("a");
+        (_0x50a6a5[_0x256f80(0xa0)] =
+          "./ProjectPage.html?judul=" +
+          encodeURIComponent(_0x4036f3[_0x256f80(0x81)])),
+          _0x38cea1[_0x256f80(0x82)](_0x50a6a5);
+        const _0x1fd9d9 = document[_0x256f80(0x9e)]("p");
+        (_0x1fd9d9[_0x256f80(0x9c)] = _0x4036f3["judul"]),
+          _0x50a6a5[_0x256f80(0x82)](_0x1fd9d9);
+        const _0x473983 = document[_0x256f80(0x9e)]("p");
+        _0x473983[_0x256f80(0xa2)]["add"](_0x256f80(0xa8));
+        const _0x256575 = document[_0x256f80(0x9e)](_0x256f80(0x9a));
+        _0x256575[_0x256f80(0x84)] = _0x4036f3[_0x256f80(0xa8)];
+        const _0x2929c2 = _0x256575[_0x256f80(0x9f)]["trim"](),
+          _0x30a0d5 = _0x2929c2["substring"](0x0, 0x64),
+          _0x3c3189 =
+            _0x2929c2["length"] > 0x64
+              ? _0x30a0d5 + _0x256f80(0xa7)
+              : _0x30a0d5;
+        (_0x473983[_0x256f80(0x9f)] = _0x3c3189),
+          _0x467d7a[_0x256f80(0x82)](_0x2bdca1),
+          _0x467d7a["appendChild"](_0x38cea1),
+          _0x467d7a["appendChild"](_0x473983),
+          areaProject["appendChild"](_0x467d7a);
+      });
   })
-  .catch((error) => {
-    console.error("Error:", error);
+  [_0x34848b(0x93)]((_0x22bbea) => {
+    const _0x1cd3e7 = _0x34848b;
+    console[_0x1cd3e7(0xa5)](_0x1cd3e7(0x90), _0x22bbea);
   });
-// }
