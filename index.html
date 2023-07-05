@@ -127,8 +127,7 @@
       // Sembunyikan tombol backTop saat halaman belum di-scroll ke atas
       backTop.style.right = "-100px";
        const pagination = document.querySelector(".bawahLast a");
-        pagination.addEventListener('click', (e)=>{
-           e.preventDefault();
+      
            window.addEventListener("scroll", function () {
         const scrollPosition = window.scrollY;
         const windowHeight = window.innerHeight;
@@ -143,7 +142,6 @@
             backTop.style.right = "-100px";
           }, 20000);
         }
-      });
         });
     </script>
     <script src="./src/js/index.js"></script>
