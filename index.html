@@ -75,6 +75,7 @@
           <h2>forum</h2>
           <div class="areaForum">
             <div class="areaPesanMasuk"></div>
+            <div class="bawahLast"><a href="#last">▼</a></div>
             <div class="inputBox">
               <form method="post" class="tempatPesan" name="Forum">
                 <input type="hidden" id="color" name="color" />
@@ -119,6 +120,29 @@
       <p>copyright &copy; 2023 -</p>
       <p>All Right Reserved</p>
     </footer>
+     <script>
+      const backTop = document.querySelector(".bawahLast");
+      const footer = document.querySelector("footer");
+
+      // Sembunyikan tombol backTop saat halaman belum di-scroll ke atas
+      backTop.style.right = "-100px";
+
+      window.addEventListener("scroll", function () {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const footerPosition = footer.offsetTop;
+
+        // Tampilkan tombol backTop saat halaman di-scroll ke atas
+        if (scrollPosition > footerPosition - windowHeight) {
+          backTop.style.right = "-100px";
+        } else {
+          backTop.style.right = "20px";
+          setInterval(() => {
+            backTop.style.right = "-100px";
+          }, 20000);
+        }
+      });
+    </script>
     <script src="./src/js/index.js"></script>
     <script src="./src/js/kucing.js"></script>
     <script src="./src/js/produk.js"></script>
