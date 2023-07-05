@@ -120,15 +120,15 @@
       <p>copyright &copy; 2023 -</p>
       <p>All Right Reserved</p>
     </footer>
-     <script>
+
+    <script>
       const backTop = document.querySelector(".bawahLast");
       const footer = document.querySelector("footer");
 
       // Sembunyikan tombol backTop saat halaman belum di-scroll ke atas
       backTop.style.right = "-100px";
-       const pagination = document.querySelector(".bawahLast a");
-      
-           window.addEventListener("scroll", function () {
+
+      window.addEventListener("scroll", function () {
         const scrollPosition = window.scrollY;
         const windowHeight = window.innerHeight;
         const footerPosition = footer.offsetTop;
@@ -142,7 +142,11 @@
             backTop.style.right = "-100px";
           }, 20000);
         }
-        });
+      });
+
+      pagination.addEventListener("click", (e) => {
+        e.preventDefault();
+      });
     </script>
     <script src="./src/js/index.js"></script>
     <script src="./src/js/kucing.js"></script>
