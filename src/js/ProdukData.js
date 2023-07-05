@@ -1,110 +1,177 @@
-const link = document.URL;
-const url = new URL(link);
-let judul;
-if (url.searchParams.get("judul") != null) {
-  judul = url.searchParams.get("judul");
+const _0x3782e5 = _0x3962;
+function _0x3962(_0x3ac62b, _0x35f07d) {
+  const _0x469b6b = _0x469b();
+  return (
+    (_0x3962 = function (_0x39625b, _0x4d2c7f) {
+      _0x39625b = _0x39625b - 0x6d;
+      let _0x166600 = _0x469b6b[_0x39625b];
+      return _0x166600;
+    }),
+    _0x3962(_0x3ac62b, _0x35f07d)
+  );
 }
-
-const boxs = document.querySelector(".box");
+(function (_0x4dccab, _0x3e1624) {
+  const _0x3e99c5 = _0x3962,
+    _0x1b70b4 = _0x4dccab();
+  while (!![]) {
+    try {
+      const _0x2d6369 =
+        (-parseInt(_0x3e99c5(0x72)) / 0x1) * (parseInt(_0x3e99c5(0x99)) / 0x2) +
+        -parseInt(_0x3e99c5(0x76)) / 0x3 +
+        parseInt(_0x3e99c5(0x7f)) / 0x4 +
+        (parseInt(_0x3e99c5(0x7b)) / 0x5) * (-parseInt(_0x3e99c5(0x8f)) / 0x6) +
+        parseInt(_0x3e99c5(0x93)) / 0x7 +
+        -parseInt(_0x3e99c5(0x79)) / 0x8 +
+        (parseInt(_0x3e99c5(0x70)) / 0x9) * (parseInt(_0x3e99c5(0x6f)) / 0xa);
+      if (_0x2d6369 === _0x3e1624) break;
+      else _0x1b70b4["push"](_0x1b70b4["shift"]());
+    } catch (_0x3ae3c) {
+      _0x1b70b4["push"](_0x1b70b4["shift"]());
+    }
+  }
+})(_0x469b, 0x2fdd0);
+const link = document[_0x3782e5(0x87)],
+  url = new URL(link);
+let judul;
+url[_0x3782e5(0x7c)][_0x3782e5(0x77)](_0x3782e5(0x98)) != null &&
+  (judul = url["searchParams"][_0x3782e5(0x77)](_0x3782e5(0x98)));
+function _0x469b() {
+  const _0xbf7b09 = [
+    "get",
+    "...",
+    "1106856wZHSLm",
+    "classList",
+    "98845mmzfzH",
+    "searchParams",
+    "innerText",
+    "urlDownload",
+    "1054200ruCsfA",
+    ".box",
+    "light",
+    "img",
+    "setAttribute",
+    "https:hamzahxou.github.io/ProjectPage.html?judul=",
+    "content",
+    "_light.png",
+    "URL",
+    "querySelector",
+    "appendChild",
+    "add",
+    "href",
+    "meta[name=\x22description\x22]",
+    "createElement",
+    "meta[property=\x22og:title\x22]",
+    "42pPkPYA",
+    "Download",
+    "find",
+    "btn",
+    "890064sKClEP",
+    "div",
+    "error",
+    "Demo",
+    "urlGambar",
+    "judul",
+    "17602IAWXaR",
+    "urlDemo",
+    "textContent",
+    "src",
+    "innerHTML",
+    "meta[property=\x22og:description\x22]",
+    "deskripsi",
+    "410YyryAV",
+    "32553UpHTkW",
+    "meta[property=\x22og:url\x22]",
+    "5Ixmlgk",
+    "then",
+    "Error:",
+    "./src/img/Produk/",
+    "66618yHLnBW",
+  ];
+  _0x469b = function () {
+    return _0xbf7b09;
+  };
+  return _0x469b();
+}
+const boxs = document[_0x3782e5(0x88)](_0x3782e5(0x80));
 fetch("./src/database/produk.json")
-  .then((response) => response.json())
-  .then((data) => {
-    // Mencari objek dengan judul yang cocok
-    const result = data.find((item) => item.judul === judul);
-
-    boxs.innerHTML = "";
-    // Memeriksa jika objek ditemukan
-    if (result) {
-      document.title = result.judul;
-      const h2 = document.createElement("h2");
-      h2.innerText = result.judul;
-
-      const areaProject = document.createElement("div");
-      areaProject.classList.add("areaProject");
-
-      const img = document.createElement("div");
-      img.classList.add("img");
-
-      const gambar = document.createElement("img");
-      if (localStorage.getItem("mode") == "light") {
-        gambar.src = `./src/img/Produk/${result.urlGambar}_light.png`;
-      } else {
-        gambar.src = `./src/img/Produk/${result.urlGambar}_dark.png`;
-      }
-      img.appendChild(gambar);
-
-      const deskripsi = document.createElement("div");
-      deskripsi.classList.add("deskripsi");
-      deskripsi.innerHTML = result.deskripsi;
-      // const pdesk = document.createElement("p");
-      // pdesk.innerText = result.deskripsi;
-
-      const Demo = document.createElement("a");
-      Demo.classList.add("btn");
-      Demo.classList.add("demo");
-      Demo.innerText = "Demo";
-      Demo.href = result.urlDemo;
-
-      const Download = document.createElement("a");
-      Download.classList.add("btn");
-      Download.innerText = "Download";
-      Download.href = result.urlDownload;
-
-      // deskripsi.appendChild(pdesk);
-      deskripsi.appendChild(Demo);
-      deskripsi.appendChild(Download);
-
-      areaProject.appendChild(img);
-      areaProject.appendChild(deskripsi);
-
-      boxs.appendChild(h2);
-      boxs.appendChild(areaProject);
-
-      // Mendapatkan data dari JSON
-      const metatitle = result.judul;
-      //
-      // Membuat elemen deskripsi
-      const cekdeskripsi = document.createElement("p");
-      cekdeskripsi.classList.add("deskripsi");
-
-      const cektemporaryElement = document.createElement("div");
-      cektemporaryElement.innerHTML = result.deskripsi;
-
-      // Mengambil teks konten dari elemen sementara
-      const cektrimmedText = cektemporaryElement.textContent.trim();
-
-      // Memotong teks konten menjadi maksimal 20 karakter
-      const ceklimitedText = cektrimmedText.substring(0, 100);
-
-      // Menambahkan tanda "..." jika teks terpotong
-      const cekdisplayText =
-        cektrimmedText.length > 100 ? ceklimitedText + "..." : ceklimitedText;
-
-      const metadeskripsi = cekdisplayText;
-      // const parsedesk = result.deskripsi.trim();
-      // const metadeskripsi = parsedesk.substring(0, 100);
-      const metaimg = `https:hamzahxou.github.io/src/img/Produk/${result.urlGambar}_light.png`;
-      const metaurl = `https:hamzahxou.github.io/ProjectPage.html?judul=${metatitle}`;
-
-      // Mengubah nilai meta
-      document
-        .querySelector('meta[name="description"]')
-        .setAttribute("content", metadeskripsi);
-      document
-        .querySelector('meta[property="og:title"]')
-        .setAttribute("content", metatitle);
-      document
-        .querySelector('meta[property="og:description"]')
-        .setAttribute("content", metadeskripsi);
-      document
-        .querySelector('meta[property="og:image"]')
-        .setAttribute("content", metaimg);
-      document
-        .querySelector('meta[property="og:url"]')
-        .setAttribute("content", metaurl);
+  [_0x3782e5(0x73)]((_0x1efc0b) => _0x1efc0b["json"]())
+  [_0x3782e5(0x73)]((_0x2b4522) => {
+    const _0x5bb1ef = _0x3782e5,
+      _0x376e6c = _0x2b4522[_0x5bb1ef(0x91)](
+        (_0x82d5c1) => _0x82d5c1[_0x5bb1ef(0x98)] === judul
+      );
+    boxs[_0x5bb1ef(0x9d)] = "";
+    if (_0x376e6c) {
+      document["title"] = _0x376e6c[_0x5bb1ef(0x98)];
+      const _0x48bbd5 = document[_0x5bb1ef(0x8d)]("h2");
+      _0x48bbd5[_0x5bb1ef(0x7d)] = _0x376e6c[_0x5bb1ef(0x98)];
+      const _0x3e2bd6 = document[_0x5bb1ef(0x8d)](_0x5bb1ef(0x94));
+      _0x3e2bd6[_0x5bb1ef(0x7a)][_0x5bb1ef(0x8a)]("areaProject");
+      const _0x5ace45 = document[_0x5bb1ef(0x8d)](_0x5bb1ef(0x94));
+      _0x5ace45["classList"][_0x5bb1ef(0x8a)](_0x5bb1ef(0x82));
+      const _0x56dbcd = document["createElement"](_0x5bb1ef(0x82));
+      localStorage["getItem"]("mode") == _0x5bb1ef(0x81)
+        ? (_0x56dbcd[_0x5bb1ef(0x9c)] =
+            "./src/img/Produk/" + _0x376e6c["urlGambar"] + _0x5bb1ef(0x86))
+        : (_0x56dbcd[_0x5bb1ef(0x9c)] =
+            _0x5bb1ef(0x75) + _0x376e6c[_0x5bb1ef(0x97)] + "_dark.png");
+      _0x5ace45["appendChild"](_0x56dbcd);
+      const _0x1960d7 = document["createElement"](_0x5bb1ef(0x94));
+      _0x1960d7[_0x5bb1ef(0x7a)][_0x5bb1ef(0x8a)](_0x5bb1ef(0x6e)),
+        (_0x1960d7[_0x5bb1ef(0x9d)] = _0x376e6c["deskripsi"]);
+      const _0x11d601 = document["createElement"]("a");
+      _0x11d601[_0x5bb1ef(0x7a)]["add"](_0x5bb1ef(0x92)),
+        _0x11d601[_0x5bb1ef(0x7a)][_0x5bb1ef(0x8a)]("demo"),
+        (_0x11d601[_0x5bb1ef(0x7d)] = _0x5bb1ef(0x96)),
+        (_0x11d601[_0x5bb1ef(0x8b)] = _0x376e6c[_0x5bb1ef(0x9a)]);
+      const _0x42c6d1 = document[_0x5bb1ef(0x8d)]("a");
+      _0x42c6d1[_0x5bb1ef(0x7a)][_0x5bb1ef(0x8a)](_0x5bb1ef(0x92)),
+        (_0x42c6d1[_0x5bb1ef(0x7d)] = _0x5bb1ef(0x90)),
+        (_0x42c6d1[_0x5bb1ef(0x8b)] = _0x376e6c[_0x5bb1ef(0x7e)]),
+        _0x1960d7[_0x5bb1ef(0x89)](_0x11d601),
+        _0x1960d7[_0x5bb1ef(0x89)](_0x42c6d1),
+        _0x3e2bd6["appendChild"](_0x5ace45),
+        _0x3e2bd6[_0x5bb1ef(0x89)](_0x1960d7),
+        boxs[_0x5bb1ef(0x89)](_0x48bbd5),
+        boxs[_0x5bb1ef(0x89)](_0x3e2bd6);
+      const _0x353993 = _0x376e6c["judul"],
+        _0x2a8d05 = document[_0x5bb1ef(0x8d)]("p");
+      _0x2a8d05[_0x5bb1ef(0x7a)][_0x5bb1ef(0x8a)](_0x5bb1ef(0x6e));
+      const _0x4d69d8 = document[_0x5bb1ef(0x8d)](_0x5bb1ef(0x94));
+      _0x4d69d8[_0x5bb1ef(0x9d)] = _0x376e6c[_0x5bb1ef(0x6e)];
+      const _0x1d93f5 = _0x4d69d8[_0x5bb1ef(0x9b)]["trim"](),
+        _0x29dfa4 = _0x1d93f5["substring"](0x0, 0x64),
+        _0x1b4382 =
+          _0x1d93f5["length"] > 0x64 ? _0x29dfa4 + _0x5bb1ef(0x78) : _0x29dfa4,
+        _0x5a88fc = _0x1b4382,
+        _0x12b971 =
+          "https:hamzahxou.github.io/src/img/Produk/" +
+          _0x376e6c[_0x5bb1ef(0x97)] +
+          _0x5bb1ef(0x86),
+        _0x25419d = _0x5bb1ef(0x84) + _0x353993;
+      document["querySelector"](_0x5bb1ef(0x8c))[_0x5bb1ef(0x83)](
+        _0x5bb1ef(0x85),
+        _0x5a88fc
+      ),
+        document[_0x5bb1ef(0x88)](_0x5bb1ef(0x8e))[_0x5bb1ef(0x83)](
+          "content",
+          _0x353993
+        ),
+        document[_0x5bb1ef(0x88)](_0x5bb1ef(0x6d))[_0x5bb1ef(0x83)](
+          _0x5bb1ef(0x85),
+          _0x5a88fc
+        ),
+        document[_0x5bb1ef(0x88)]("meta[property=\x22og:image\x22]")[
+          _0x5bb1ef(0x83)
+        ](_0x5bb1ef(0x85), _0x12b971),
+        document[_0x5bb1ef(0x88)](_0x5bb1ef(0x71))[_0x5bb1ef(0x83)](
+          _0x5bb1ef(0x85),
+          _0x25419d
+        );
     } else {
     }
   })
-  .catch((error) => {
-    console.error("Error:", error);
+  ["catch"]((_0x26ec6a) => {
+    const _0x52f02d = _0x3782e5;
+    console[_0x52f02d(0x95)](_0x52f02d(0x74), _0x26ec6a);
   });
