@@ -606,6 +606,26 @@ a.btn:hover {
   border-color: var(--bg-success);
 }
 
+.bawahLast {
+  position: fixed;
+  background-color: var(--bg-danger);
+  bottom: 90px;
+  right: 20px;
+  z-index: 9999;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.bawahLast a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
 /* footer */
 
 body.light footer {
