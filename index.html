@@ -70,9 +70,24 @@
       </section>
 
       <section id="Forum" class="Forum default">
+        <div class="konfirmasiGame">
+          <div class="kotakquiz">
+          <div class="quiz">
+          <span class="nilai1"></span>
+          <span class="operator">+</span>
+          <span class="nilai2"></span>
+          <span class="samadengan">=</span>
+          <input type="number" class="jawaban"></input>
+        </div>
+          <button type="button" id="kirim">kirim</button>
+        </div>
+        </div>
+        <div class="loadingForum">
+          <div class="loadingspinForum"></div>
+        </div>
         <div class="box">
           <h2>forum</h2>
-          <div class="areaForum">
+          <div class="areaForum">  
             <div class="areaPesanMasuk"></div>
             <div class="bawahLast"><a href="#last">▼</a></div>
             <div class="inputBox">
@@ -114,7 +129,6 @@
         </div>
       </section>
     </main>
-
     <footer id="last">
       <p>copyright &copy; 2023 -</p>
       <p>All Right Reserved</p>
@@ -123,23 +137,17 @@
     <script>
       const backTop = document.querySelector(".bawahLast");
       const footer = document.querySelector("footer");
-
-      // Sembunyikan tombol backTop saat halaman belum di-scroll ke atas
-      backTop.style.right = "-100px";
-
+          backTop.style.right = "-100px";
+   
       window.addEventListener("scroll", function () {
         const scrollPosition = window.scrollY;
         const windowHeight = window.innerHeight;
         const footerPosition = footer.offsetTop;
-
-        // Tampilkan tombol backTop saat halaman di-scroll ke atas
+     
         if (scrollPosition > footerPosition - windowHeight) {
           backTop.style.right = "-100px";
         } else {
           backTop.style.right = "20px";
-          setTimeout(() => {
-            backTop.style.right = "-100px";
-          }, 20000);
         }
       });
     </script>
