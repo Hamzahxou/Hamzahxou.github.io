@@ -427,6 +427,13 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
+input[type="number"]::placeholder {
+  transform: translateY(8px);
+  padding-left: 5px;
+  color: var(--bg-dark);
+  letter-spacing: 10px;
+}
+
 .kotakquiz button {
   margin-top: 20px;
   display: inline-block;
@@ -462,6 +469,13 @@ section.Forum .areaForum .areaPesanMasuk .pesanMasuk {
   margin-bottom: 10px;
   border-radius: 5px;
   overflow-y: scroll;
+}
+
+section.Forum .areaForum .areaPesanMasuk .pesanMasuk .waktu {
+  text-align: end;
+}
+section.Forum .areaForum .areaPesanMasuk .pesanMasuk .waktu  i{
+  font-size: 10px;
 }
 
 section.Forum .areaForum .areaPesanMasuk .pesanMasuk .nama {
@@ -530,7 +544,7 @@ section.Forum .boxinfo {
   gap: 10px;
 }
 section.Forum .areaForum form.tempatPesan input.nama {
-  width: 40%;
+  width: 30%;
   background-color: transparent;
   border: 2px solid var(--text-color);
   border-radius: 5px;
@@ -728,6 +742,64 @@ a.btn {
   border-radius: 50%;
   cursor: pointer;
   font-weight: 700;
+}
+
+.areaTempatStiker {
+  position: fixed;
+  left: 0;
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 110px;
+  z-index: 99999999;
+}
+body.light .boxstiker {
+  background-color: var(--bg-dark);
+}
+.boxstiker {
+  padding: 0.5rem;
+  width: 200px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: var(--bg-light);
+}
+.boxstiker.stikerss {
+  display: flex;
+}
+.boxstiker .imgstiker {
+  position: relative;
+  border: 2px solid var(--text-color);
+  border-radius: 2px;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.areaTempatStiker .boxstiker .imgstiker img {
+  width: 30px;
+  display: block;
+  cursor: pointer;
+}
+
+.stikerArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stikerKlik {
+  width: 20px;
+  cursor: pointer;
+}
+
+.stiker {
+  user-select: none;
+  pointer-events: none;
 }
 
 a.btn.demo {
