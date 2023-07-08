@@ -884,7 +884,7 @@ body.light footer p:first-child::after {
   bottom: 100%;
 }
 /* breakpoint */
-@media (max-width: 400px) {
+@media (max-width: 350px) {
   header .logo a {
     font-size: 1.5rem;
   }
