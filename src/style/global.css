@@ -884,6 +884,27 @@ body.light footer p:first-child::after {
   bottom: 100%;
 }
 /* breakpoint */
+@media (max-width: 400px) {
+  header .logo a {
+    font-size: 1.5rem;
+  }
+  header .title {
+    font-size: 8px;
+  }
+  header ul li a.top {
+    font-size: 12px;
+  }
+  header ul {
+    gap: 1.5rem;
+  }
+  header ul li::before {
+    width: 8px;
+    height: 8px;
+  }
+  header ul li a {
+    font-size: 10px;
+  }
+}
 @media (min-width: 768px) {
   section.Forum .areaForum {
     width: 700px;
