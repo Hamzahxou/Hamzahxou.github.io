@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="./src/style/global.css" />
   </head>
   <body>
-    <header>
+    <header id="top">
       <div class="logo">
         <h1>
           <a href="#">&lt; <span>Hamzahxou</span> /&gt;</a>
@@ -36,7 +36,8 @@
       </div>
       <ul>
         <li class="active"><a href="#Home" id="MenuHome">Home</a></li>
-        <li><a class="top" href="#Project" id="MenuProject">Project</a></li>
+        <li class="active"><a href="#About" id="MenuAbout">About</a></li>
+        <li><a href="#Project" id="MenuProject">Project</a></li>
         <li><a href="#Forum" id="MenuForum">Forum</a></li>
       </ul>
 
@@ -48,17 +49,48 @@
     </header>
     <main>
       <section id="Home" class="Home">
-        <!-- <div class="areaHuman"> -->
         <img
           class="human"
           src="src/img/pixelHuman.png"
           width="150"
           alt="human"
         />
-        <!-- </div> -->
         <div class="textHero">
           <h2>Web & Game <span>Developer</span></h2>
-          <p id="hari"></p>
+          <!-- <p id="hari"></p> -->
+          <div class="informasiSaya">
+            <p>Seorang Pelajar smk Jurusan RPL yang sekarang di ganti PPLG</p>
+          </div>
+        </div>
+      </section>
+      <section id="About" class="About">
+        <div class="box">
+          <h2>About</h2>
+          <div class="Des">
+            <p>
+              Halo, nama saya Hamzah. Saya seorang pelajar SMK jurusan PPLG.
+              Bidang minat saya adalah Web dan Game Developer, saya Bercita-cita
+              ingin membantu dalam pembangunan dunia yang modern akan teknologi
+            </p>
+            <p>
+              Jika Anda tertarik untuk berkolaborasi atau memiliki pertanyaan,
+              silakan hubungi saya melalui <span>email</span> atau melalui
+              <span>Whatsapp</span>.
+            </p>
+            <p>
+              Selamat datang untuk menjelajahi proyek-proyek saya dan mengetahui
+              lebih lanjut tentang keterampilan dan pengalaman saya di bidang
+              pengembangan web dan game.
+            </p>
+
+            <address>
+              Email:
+              <a href="mailto:hamzahxou@gmail.com"> hamzahxou@gmail.com</a>
+            </address>
+            <p class="sosialMedia">
+              Whatsapp: <a href="https:wa.me/6285336889508"> +6285336889508</a>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -92,13 +124,28 @@
         <div class="areaTempatStiker">
           <div class="boxstiker">
             <div class="imgstiker">
-              <img src="src/img/stiker/doggy.gif" alt="doggy" value=":doggy:" onclick="tambahkanStiker(this)"/>
+              <img
+                src="src/img/stiker/doggy.gif"
+                alt="doggy"
+                value=":doggy:"
+                onclick="tambahkanStiker(this)"
+              />
             </div>
             <div class="imgstiker">
-              <img src="src/img/stiker/moai.gif" alt="moai" value=":moai:" onclick="tambahkanStiker(this)"/>
+              <img
+                src="src/img/stiker/moai.gif"
+                alt="moai"
+                value=":moai:"
+                onclick="tambahkanStiker(this)"
+              />
             </div>
             <div class="imgstiker">
-              <img src="src/img/kucing.gif" alt="kucing" value=":cat:" onclick="tambahkanStiker(this)"/>
+              <img
+                src="src/img/kucing.gif"
+                alt="kucing"
+                value=":cat:"
+                onclick="tambahkanStiker(this)"
+              />
             </div>
           </div>
         </div>
@@ -106,6 +153,7 @@
           <h2>forum</h2>
           <div class="areaForum">
             <div class="areaPesanMasuk"></div>
+            <div class="atasFirst"><a href="#top">▲</a></div>
             <div class="bawahLast"><a href="#last">▼</a></div>
             <div class="inputBox">
               <form method="post" class="tempatPesan" name="Forum">
@@ -153,25 +201,34 @@
         </div>
       </section>
     </main>
+
     <footer id="last">
       <p>copyright &copy; 2023 -</p>
       <p>All Right Reserved</p>
     </footer>
 
     <script>
-      const backTop = document.querySelector(".bawahLast");
+      const atasFirst = document.querySelector(".atasFirst");
+      const bawahLast = document.querySelector(".bawahLast");
       const footer = document.querySelector("footer");
-      backTop.style.right = "-100px";
+
+      bawahLast.style.right = "-100px";
+      atasFirst.style.right = "-100px";
 
       window.addEventListener("scroll", function () {
         const scrollPosition = window.scrollY;
         const windowHeight = window.innerHeight;
-        const footerPosition = footer.offsetTop;
+        const sPosition = footer.offsetTop;
 
-        if (scrollPosition > footerPosition - windowHeight) {
-          backTop.style.right = "-100px";
+        if (scrollPosition < sPosition - windowHeight) {
+          atasFirst.style.right = "-100px";
         } else {
-          backTop.style.right = "20px";
+          atasFirst.style.right = "20px";
+        }
+        if (scrollPosition > sPosition - windowHeight) {
+          bawahLast.style.right = "-100px";
+        } else {
+          bawahLast.style.right = "20px";
         }
       });
     </script>
